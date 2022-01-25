@@ -238,14 +238,14 @@ class googleimagesdownload:
             sys.exit()
 
     # Download Page for more than 100 images
-    def download_extended_page(self, url, chromedriver):
+    def download_extended_page(self, url, chromedriver="/usr/lib/chromium-browser/chromedriver"):
         from selenium import webdriver
         from selenium.webdriver.common.keys import Keys
         from selenium.webdriver.common.options import Options
         from selenium.webdriver.chrome.service import Service
         from selenium.webdriver.common.by import By
 
-        chromedriver = Service("/usr/lib/chromium-browser/chromedriver")
+        chrome_service = Service(chromedriver)
 
         if sys.version_info[0] < 3:
             reload(sys)
